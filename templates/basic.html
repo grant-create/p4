@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoTrader</title>
+
+    <!-- bootstrap links: -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <ul class="nav nav-tabs">
+        <li class="nav-link ">
+            <a class="navbar-brand" href="{{url_for('home')}}">Home</a>
+        </li>    
+        <li class="nav-link ">
+            <a class="navbar-brand" href="{{url_for('info')}}">Info</a>
+        </li>    
+    </ul>
+        <li class="nav-link ">
+            <a class="navbar-brand" href="{{url_for('login')}}">Login</a>
+        </li>    
+
+    </nav>
+    <!-- blocked content is shown on this page only -->
+    {% block content %}
+
+<div class='container text-center justify-content-center'>
+        
+   
+        
+    <div>
+        <h5>Account is working: {{actstat}}</h5>
+        <h5>Buying Power: {{actbp}}</h5>
+        <h5>The market is open: {{clock.is_open}}</h5>
+    </div>
+
+
+    <div class='row justify-content-center'>
+        <div class='col-auto border border-primary rounded'>
+            <h6>Active positions:</h6>
+            
+
+            <div class="cylon_eye"></div>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Avg Price</th>
+                        <th>Current Price</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
+                {% for pos in portfolio %}
+                <tr>
+
+                    <td>{{pos.symbol}}</td>
+                    <td>{{pos.avg_entry_price}}</td>    
+                    <td>{{pos.current_price}}</td>    
+                    <td>{{pos.qty}}</td>   
+                    
+                </tr>
+                {% endfor %}
+                
+                
+            </table>
+            <br>
+            <a href="{{ url_for('home') }}"><button class="btn btn-info rfrsh">Refresh</button></a>
+            
+            <br>
+            <a href="{{url_for('get_data')}}"><button class="btn btn-success" id="run"> Run Program</button></a>
+
+
+
+
+        </div>
+        <br>
+    </div>
+
+    
+    
+    
+</div>
+{% endblock %}
+{% extends "background.html" %}
+</body>
+
+
+</html>

@@ -1,0 +1,30 @@
+.nav-link {
+    
+    padding: 0;
+}
+.nav{
+    margin-top: 0px;
+}
+
+.rfrsh {
+    margin-bottom: 2px;
+}
+
+
+
+.cylon_eye {
+    background-color: rgb(106, 255, 0);
+    background-image: linear-gradient(to right,
+        rgba(252, 252, 252, 0.9) 25%,
+        rgba(131, 198, 224, 0.7) 50%,
+        rgba(83, 175, 101, 0.9) 75%);
+    color: white;
+    height: 1px;
+    width: 20%;
+  
+    -webkit-animation: 4s linear 0s infinite  move_eye;
+            animation: 4s linear 0s infinite  move_eye;
+  }
+  
+  @-webkit-keyframes move_eye { from { margin-left: -10%; } to { margin-left: 80%; }  }
+          @keyframes move_eye { from { margin-left: -10%; } to { margin-left: 80%; }  }

@@ -1,0 +1,19 @@
+{% extends "basic.html" %}
+{% block content %}
+    <div class="jumbotron">
+        <p>Welcome to the Login page</p>
+
+        <p>Fill out the form</p>
+        <form action="{{url_for('home')}}">
+            <label for="user">UserName</label>
+            <input type="text" name="user">
+            <label for="pw">PW</label>
+            <input type="password" name="pw">
+            <input type="submit" value = "Login">
+           
+        </form>
+
+    </div>
+
+
+{% endblock %}
