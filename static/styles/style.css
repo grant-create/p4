@@ -22,8 +22,11 @@
 }
 
 .fillpage{
-    height: 100vh;
+    
+    height: 85vh;
+    margin-bottom: -15%;
 }
+
 
 
 .cylon-bg{
@@ -104,6 +107,7 @@
             margin-bottom:-7px; /*Fix for safari gap*/
             min-height:100px;
             max-height:150px;
+            flex-shrink: 0;
           }
           
           .content {
@@ -156,3 +160,10 @@
             }
           }
 
+
+.footer {
+    
+    
+    bottom: 0;
+    
+}
