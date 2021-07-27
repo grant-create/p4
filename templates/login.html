@@ -1,8 +1,10 @@
 {% extends "basic.html" %}
 {% block content %}
-    <div class="jumbotron">
-        <p>Welcome to the Login page</p>
+<div class="fillpage">
 
+    <div class="" style="padding-top: 25px;">
+        <p>Welcome to the Login page</p>
+        
         <p>Fill out the form</p>
         <form action="{{url_for('home')}}">
             <label for="user" style="color: black">UserName</label>
@@ -10,10 +12,11 @@
             <label for="pw" style="color: black">PW</label>
             <input type="password" name="pw">
             <input type="submit" value = "Login">
-           
+            
         </form>
-
+        
     </div>
+</div>
 
 
 {% endblock %}
