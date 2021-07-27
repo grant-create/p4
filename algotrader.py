@@ -423,7 +423,7 @@ def run():
                 clock.is_open
                 sell_check()
                 print("waiting to check again")
-                time.sleep(60*20)
+                time.sleep(60*60)
                 print('time now: {}'.format(date))
 
 
@@ -434,7 +434,7 @@ def run():
                     if x.symbol not in sellable_pos:
                         sellable_pos.append(x.symbol)
                 print('added everything to sellable', sellable_pos)
-                time.sleep(60*9)
+                time.sleep(60*60)
                 pass
             #continue???
 
