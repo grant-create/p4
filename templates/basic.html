@@ -27,67 +27,107 @@
         </li>    
 
     </nav>
-    <!-- blocked content is shown on this page only -->
-    {% block content %}
 
-<div class='container text-center justify-content-center'>
+
+    
+<div class="header">
+
+    <!--Content before waves-->
+    <div class="inner-header ">
+    <!--Just the logo.. Don't mind this-->
         
-   
+
+        <!-- blocked content is shown on this page only -->
+
+        <div class='container text-center justify-content-center '>
+            {% block content %}   
         
-    <div>
-        <h5>Account is working: {{actstat}}</h5>
-        <h5>Buying Power: {{actbp}}</h5>
-        <h5>The market is open: {{clock.is_open}}</h5>
-    </div>
+            <div class="main vertical-center horizontal-center" >
 
-
-    <div class='row justify-content-center'>
-        <div class='col-auto border border-primary rounded'>
-            <h6>Active positions:</h6>
-            
-
-            <div class="cylon_eye"></div>
-            <table class="table table-responsive">
-                <thead>
-                    <tr>
-                        <th>Symbol</th>
-                        <th>Avg Price</th>
-                        <th>Current Price</th>
-                        <th>Qty</th>
-                    </tr>
-                </thead>
-                {% for pos in portfolio %}
-                <tr>
-
-                    <td>{{pos.symbol}}</td>
-                    <td>{{pos.avg_entry_price}}</td>    
-                    <td>{{pos.current_price}}</td>    
-                    <td>{{pos.qty}}</td>   
                     
-                </tr>
-                {% endfor %}
-                
-                
-            </table>
-            <br>
-            <a href="{{ url_for('home') }}"><button class="btn btn-info rfrsh">Refresh</button></a>
+                    <h5>Account is working: {{actstat}}</h5>
+                    <h5>Buying Power: {{actbp}}</h5>
+                <h5>The market is open: {{clock.is_open}}</h5>
+                <div class='row justify-content-center'>
+                    
+
+                    
+                    <div class='col-auto border border-primary rounded'>
+                        <h6>Active positions:</h6>
+                        
+                        
+                        
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Symbol</th>
+                                    <th>Avg Price</th>
+                                    <th>Current Price</th>
+                                    <th>Qty</th>
+                                </tr>
+                            </thead>
+                            {% for pos in portfolio %}
+                            <tr>
+
+                            <td>{{pos.symbol}}</td>
+                            <td>{{pos.avg_entry_price}}</td>    
+                            <td>{{pos.current_price}}</td>    
+                            <td>{{pos.qty}}</td>   
+                            
+                        </tr>
+                        {% endfor %}
+                        
+                        
+                    </table>
+                    <br>
+                    <a href="{{ url_for('home') }}"><button class="btn btn-info rfrsh">Refresh</button></a>
+                    
+                    <br>
+                    <a href="{{url_for('get_data')}}"><button class="btn btn-success" id="run"> Run Program</button></a>
+                    
+                </div>
+                <div>
+                    <br>
+                </div>
+
+
+
+                </div>
+                <br>
+                {% endblock %}
+            </div>
+
             
-            <br>
-            <a href="{{url_for('get_data')}}"><button class="btn btn-success" id="run"> Run Program</button></a>
-
-
-
-
+            
+            
         </div>
-        <br>
+        
+        
     </div>
 
-    
-    
-    
+<!--Waves Container-->
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+    </g>
+    </svg>
+    </div>
+    <!--Waves end-->
 </div>
-{% endblock %}
-{% extends "background.html" %}
+
 </body>
 
 
