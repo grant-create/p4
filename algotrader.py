@@ -26,11 +26,10 @@ start_date = str(dt.datetime.now() + dt.timedelta(30))
 
 
 import pandas as pd
-import pandas_datareader.data as web
+
 import datetime
 from statistics import mean
 from datetime import date
-from IPython.display import clear_output
 import math
 import pandas as pd
 import alpaca_trade_api as tradeapi
@@ -38,7 +37,6 @@ import time
 from IPython.display import clear_output
 from datetime import datetime
 from pytz import timezone, utc
-import time
 from urllib.error import HTTPError
 
 date_format='%H:%M:%S'
@@ -92,7 +90,6 @@ def run():
 
 
     import pandas as pd
-    import pandas_datareader.data as web
     import datetime
     from statistics import mean
     from datetime import date
@@ -104,7 +101,6 @@ def run():
     from IPython.display import clear_output
     from datetime import datetime
     from pytz import timezone, utc
-    import time
     from urllib.error import HTTPError
 
     
