@@ -4,7 +4,7 @@ pandas
 datetime
 statistics
 datetime
-IPython.display
+
 math
 alpaca_trade_api
 time
