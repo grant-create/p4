@@ -30,7 +30,7 @@ import pandas as pd
 import datetime
 from statistics import mean
 from datetime import date
-import math
+
 import pandas as pd
 import alpaca_trade_api as tradeapi
 import time
@@ -93,7 +93,7 @@ def run():
     import datetime
     from statistics import mean
     from datetime import date
-    import math
+    
     import pandas as pd
     import alpaca_trade_api as tradeapi
     import time
