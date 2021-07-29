@@ -10,6 +10,9 @@
 # import dotenv
 from dotenv import load_dotenv
 # import the operating system
+
+
+
 import os
 
 # this is how you get environmental variables
