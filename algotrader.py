@@ -34,7 +34,7 @@ import math
 import pandas as pd
 import alpaca_trade_api as tradeapi
 import time
-from IPython.display import clear_output
+
 from datetime import datetime
 from pytz import timezone, utc
 from urllib.error import HTTPError
@@ -93,12 +93,10 @@ def run():
     import datetime
     from statistics import mean
     from datetime import date
-    from IPython.display import clear_output
     import math
     import pandas as pd
     import alpaca_trade_api as tradeapi
     import time
-    from IPython.display import clear_output
     from datetime import datetime
     from pytz import timezone, utc
     from urllib.error import HTTPError
@@ -218,7 +216,7 @@ def run():
 
                 else:
                     pass
-                clear_output()
+                
                 print(stock)
                 print("{} of 500".format(c))
                 if c == 250:
@@ -398,13 +396,13 @@ def run():
             getList()
             print(buy_on_open)
             time.sleep(6)
-            clear_output()
+            
             ## SORT LIST BY PRICE TO MAXIMIZE SHARES PURCHASED
             #sortList()
 
             # BUY NEW STOCKS (IF THEY ARE NOT ALREADY OWNED)
             buyStocks()
-            clear_output()
+            
             print("run")
             print("one day hold:", one_day_hold)
             # SELL WHAT HAS GONE UP
