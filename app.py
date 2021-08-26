@@ -14,6 +14,7 @@ sleep = time.sleep(5)
 
 account = api.get_account()
 actstat = account.status
+acttotal = account.equity
 actbp=account.buying_power
 clock = api.get_clock()
 portfolio = api.list_positions()
@@ -34,7 +35,7 @@ def home():
     """
 
     
-    return render_template("basic.html", run=run,  portfolio=portfolio, actstat=actstat, actbp=actbp, clock=clock)
+    return render_template("basic.html", run=run,  portfolio=portfolio, acttotal=acttotal, actstat=actstat, actbp=actbp, clock=clock)
 
 
 

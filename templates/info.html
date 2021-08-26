@@ -15,11 +15,12 @@
     <h4>The script is scheduled to finish running on {{start_date[:10]}}. </h4>
     <br>
     <p style="color: white">Once a day, the script looks for stocks that 
-        are below their 20-day rolling average and buys them (if not already owned). 
+        are below their 20-day rolling average and buys them (if not already owned, and if there is enough money to buy). 
         then it will go through and see if the positions acquired yesterday have gone up enough to sell.
         Currently the program looks for a 2% increase before selling. It will check a few more times before the
         end of the day. After the market has closed it will transition all the recently purchased stocks into
         the "sellable list" in order to avoid day trading. </p>
+        
         
     </div>
 
