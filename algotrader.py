@@ -44,6 +44,13 @@ date = datetime.now(tz=utc)
 date = date.astimezone(timezone('US/Pacific'))
 day=date.strftime("%D")
 
+
+
+
+# ADD IN CHANGES BELOW THIS LINE:
+
+
+
 previousclose = []
 lastclose = []
 buy_on_open = []
@@ -138,7 +145,7 @@ def run():
     print("The market is open: {}".format(clock.is_open))
 
 
-#Should print 'ACTIVE'
+    #Should print 'ACTIVE'
     def alpacaInfo():
         
 
@@ -359,8 +366,12 @@ def run():
     # print(start_date[:10])
 
 
+    end_date = False
+    if start_date == day:
+            end_date = True
     ## WHILE DAY IS NOT EQUAL TO LIKE 2 WEEKS FROM NOW?
-    while day != start_date:
+    while not end_date:
+        
         print("starting")
         # time.sleep(60*60)
         
@@ -370,7 +381,9 @@ def run():
         day=date.strftime("%D")
     ##     MIGHT NEED TO RE CLEAR LISTS EVERY DAY??
         buy_on_open = []
-        
+
+        if start_date == day:
+            end_date = True
         # NEED TO LOOP THIS, OTHERWISE PROGRAM WILL CLEAR ALL LISTS
 
 
