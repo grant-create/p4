@@ -4,8 +4,6 @@ pandas
 datetime
 statistics
 datetime
-
-
 alpaca_trade_api
 
 
