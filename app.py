@@ -53,7 +53,7 @@ def login():
 @app.route('/get_data')
 def get_data():
     x = 0
-    return render_template('runpy.html', sleep=sleep, portfolio=portfolio, actstat=actstat, actbp=actbp, clock=clock, start_date=start_date, run=run, x=x)
+    return render_template(sleep=sleep, portfolio=portfolio, actstat=actstat, actbp=actbp, clock=clock, start_date=start_date, run=run, x=x)
 
 
 @app.errorhandler(404)
